@@ -2,7 +2,7 @@ package rpc
 
 import (
 	"google.golang.org/grpc"
-	"hex/internal/adapters/framework/left/grpc/pb"
+	"hex/internal/adapters/framework/left/gRPC/pb"
 	"hex/internal/ports"
 	"log"
 	"net"

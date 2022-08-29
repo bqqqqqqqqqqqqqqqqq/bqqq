@@ -4,7 +4,7 @@ import (
 	"context"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
-	"hex/internal/adapters/framework/left/grpc/pb"
+	"hex/internal/adapters/framework/left/gRPC/pb"
 )
 
 func (grpca Adapter) GetAddition(ctx context.Context, req *pb.OperationParameters) (*pb.Answer, error) {
