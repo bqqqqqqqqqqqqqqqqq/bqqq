@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package="./pb";
+/*
+protoc --go_out=internal/adapters/framework/left/grpc
+--proto_path=internal/adapters/framework/left/grpc/proto
+internal/adapters/framework/left/grpc/proto/number_msg.proto
+*/
+message Answer {
+  int32 value = 1;
+}
+
+message OperationParameters{
+  int32 a =1;
+  int32 b = 2;
+}

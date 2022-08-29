@@ -1,0 +1,26 @@
+syntax ="proto3";
+
+package pb;
+
+import "number_msg.proto";
+//--proto_path=internal/adapters/framework/left/grpc/proto
+//goland 在file-setting里配置
+option go_package="./pb";
+/*
+grpc_out是因为imporo吗。。。。
+总的生成输出代码 grpc_out指此条option里./所表示路径
+protoc --go-grpc_out=internal/adapters/framework/left/grpc --proto_p
+ath=internal/adapters/framework/left/grpc/proto internal/adapters/framework/left/grpc/proto/arithmetic_svc.proto
+*/
+
+/*protoc --go-grpc_out=require_unimplemented_servers=false:internal/adapters/framework/left/grpc -
+-proto_path=internal/adapters/framework/left/grpc/proto internal/adapters/framework/left/grpc/proto/arithmetic_svc.proto
+*/
+//就是./路径
+
+service ArithmeticService{
+    rpc GetAddition(OperationParameters) returns (Answer) {}
+    rpc GetSubtraction(OperationParameters) returns (Answer) {}
+    rpc GetMultiplication(OperationParameters) returns (Answer) {}
+    rpc GetDivision(OperationParameters) returns (Answer) {}
+}
