@@ -2,10 +2,10 @@ FROM golang:1.15.3-alpine3.12
 
 EXPOSE 9000
 
-RUN apk update\
-	&apk add --no-cache\
-	mysql-client\
-	build-base
+RUN apk update \
+	&& apk add --no-cache \
+	    mysql-client \
+	    build-base
 
 RUN mkdir /app
 WORKDIR /app
@@ -20,5 +20,5 @@ RUN /bin/chmod +x /usr/local/bin/grpc_entrypint.sh
 RUN go build cmd/main.go
 RUN mv main /usr/local/bin/
 
-CMD["main"]
-ENTRYPOINT["grpc_entrypoint.sh"]
+CMD ["main"]
+ENTRYPOINT ["grpc_entrypoint.sh"]
